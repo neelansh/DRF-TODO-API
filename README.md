@@ -12,7 +12,7 @@ A simple Django TODO api with authentication
 ## API endpoints 
 	* `/task` : to view the tasks 
 		* filters: 
-		* completed: to filter on bases of completed or un completed task
+			* completed: to filter on bases of completed or un completed task
 		* search: 
-		* task_name: search on bases of task name
+			* task_name: search on bases of task name
 	* `/register ` : to register new user

@@ -12,6 +12,13 @@ from django.contrib.auth import get_user_model
 # Create your views here.
 
 
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from rest_auth.registration.views import SocialLoginView
+
+class FacebookLogin(SocialLoginView):
+    adapter_class = FacebookOAuth2Adapter
+
+
 class TaskViewSet(viewsets.ModelViewSet):
 	permission_classes = (IsAuthenticated, ) 
 	model = Task;
@@ -29,9 +36,7 @@ class TaskViewSet(viewsets.ModelViewSet):
 		return serializer.save(user = self.request.user);
 
 
-
-
-class CreateUserView(CreateAPIView):
-	model = get_user_model();
-	permission_classes = (AllowAny, )
-	serializer_class = UserSerializer
+# class CreateUserView(CreateAPIView):
+# 	model = get_user_model();
+# 	permission_classes = (AllowAny, )
+# 	serializer_class = UserSerializer
