@@ -147,3 +147,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/task/'
+
+
+ACCOUNT_EMAIL_REQUIRED = False
